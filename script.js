@@ -65,7 +65,7 @@ function onVideoClick(video) {
 function onVideoVolumeChange(video) {
 	if (canUseLocalStorage) {
 		var volume =
-			video.volume != undefined || video.volume != null ? video.volume : 0.5;
+			(video.volume != undefined && video.volume != null) ? video.volume : 0.5;
 		if (volume) {
 			defaultVolume = volume;
 			localStorage.setItem('_BLUESKY_VIDEO_VOLUME', defaultVolume);
